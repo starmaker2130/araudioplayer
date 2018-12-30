@@ -1,0 +1,19 @@
+{
+  "name": "xraudioplayer",
+  "version": "0.1.1",
+  "description": "AR-ONLY version of audio player interface for web xr projects made by patrice-morgan ongoly for the house of venus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starmaker2130/araudioplayer.git"
+  },
+  "author": "Patrice-Morgan Ongoly (http://houseofven.us)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starmaker2130/araudioplayer/issues"
+  },
+  "homepage": "https://github.com/starmaker2130/araudioplayer#readme"
+}
