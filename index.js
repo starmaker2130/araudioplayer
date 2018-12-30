@@ -237,7 +237,7 @@ var ARAudioPlayer = {
                             <a-asset-item id="crate-obj" src="../media/model/omega.obj"></a-asset-item>
                             <a-asset-item id="crate-mtl" src="../media/model/omega.mtl"></a-asset-item>
                         </a-assets>
-                        <a-marker preset='custom' type='pattern' url='../media/pattern/emily.patt'>
+                        <a-marker preset='custom' type='pattern' url='../media/pattern/main.patt'>
                         <a-entity geometry="primitive: plane; width: 2; height: 2;" rotation='0 -180 180' material='side: double; color: red;' position='0  1 -1.5'>
                             <a-animation attribute="rotation"
                                          delay='3500'
