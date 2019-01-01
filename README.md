@@ -8,6 +8,9 @@ AR-ONLY version of the XRAudioPlayer component (XRMediaPlayer)
 
 View content using a wide range of devices and formats. Implement the module in both modular server-side and non-modular client-side applications with just a few lines of JavaScript code!
 
+## Tutorials:
+Make and Share an AR Playlist
+
 ## Usage:
 
 [Server-side](#server-side)
