@@ -389,3 +389,6 @@ var ARAudioPlayer = {
     view : 'scroll', // scroll is the default, list is the secondary option, tertiary mode is the alternative AR or VR view
     XRSetting : 'flat' // flat is default, ar is secondary, vr is tertiary
 };
+
+// expose log to other modules
+exports.ARAudioPlayer = ARAudioPlayer;
