@@ -1,6 +1,6 @@
 {
   "name": "araudioplayer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "AR-ONLY version of audio player interface for web xr projects made by patrice-morgan ongoly for the house of venus",
   "main": "index.js",
   "scripts": {
