@@ -1,5 +1,5 @@
 var ARAudioPlayer = {
-    type :'xraudio',
+    type :'araudio',
     socket: null,
     spawn: function(){
         var self = this;
@@ -15,17 +15,17 @@ var ARAudioPlayer = {
         <!DOCTYPE html>
         <html>
         <head>
-            <title>XRAudioPlayer| spawn| v. 0.12.3</title>
+            <title>ARAudioPlayer| spawn| v. 0.2.0</title>
             <link rel=stylesheet type="text/css" href='../../css/XRMP.css' />
             <script src='../js/jquery-3.2.1.min.js'></script>
             <script src='../js/aframe.min.js'></script>
             <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
             <script src='../js/coreUX.js'></script> <!-- handles movement, styling, and interactivity of core ui components in the dom -->
-            <script src='../js/XRAudioPlayer.js'></script> <!-- contains the class function for creating xr audio player objects -->
+            <script src='../js/ARAudioPlayer.js'></script> <!-- contains the class function for creating xr audio player objects -->
             <script>
 
                 document.addEventListener('DOMContentLoaded', function(){
-                    var player = new XRAudioPlayer();   //create an xr audio player object
+                    var player = new ARAudioPlayer();   //create an xr audio player object
                     player.build();`;
         
         var base = `coreEventListeners.launch([player]);    //  tell the core page launcher to start 
@@ -452,4 +452,4 @@ var ARAudioPlayer = {
 };
 
 // expose log to other modules
-exports.ARAudioPlayer = ARAudioPlayer;
+module.exports = ARAudioPlayer;
