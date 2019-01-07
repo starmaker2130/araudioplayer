@@ -2,14 +2,14 @@
 
 _for emily_
 
-AR-ONLY version of the XRAudioPlayer component (XRMediaPlayer)
+an audio player for web AR experiences and distributed applications
 
-**_ARAudioPlayer_** generates an audio player that users can experience in web AR or traditional flat modes. Experiences are built using Three.js/AFrame.
+The **_ARAudioPlayer_** generates an audio player that users can experience in augmented reality through a web browser on most mobile, laptop, desktop, or tablet devices. Experiences are produced using Three.js/AFrame to achieve a secure, cross-platform standard for sharing audio on the Immersive Web.
 
-View content using a wide range of devices and formats. Implement the module in both modular server-side and non-modular client-side applications with just a few lines of JavaScript code!
+Developers can implement the module in both modular server-side and non-modular client-side applications with just a few lines of JavaScript code.
 
 ## Tutorials:
-Make and Share an AR Playlist
+* Build and Share Your Own AR Music Playlist
 
 ## Usage:
 
@@ -26,8 +26,7 @@ npm install araudioplayer
 
  (a) using add method
 ```javascript
-var XRMP = require('araudioplayer');
-var myPlayer = XRMP.ARAudioPlayer;
+var myPlayer = require('araudioplayer');
 
 myPlayer.add('../media/img/OracularSpectacular.png', '../media/audio/TheYouth.mp3' , { title: 'The Youth', author: 'MGMT', year: 2007});
 
@@ -41,8 +40,7 @@ myPlayer.spawn();
 an object or array of objects in the following format can be processed by the module to generate same outcome as above
 
 ```javascript
-var XRMP = require('araudioplayer');
-var myPlayer = XRMP.ARAudioPlayer;
+var myPlayer = require('araudioplayer');
 
 var collection = {
     'The Youth': {

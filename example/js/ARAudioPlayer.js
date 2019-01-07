@@ -62,7 +62,11 @@ ARAudioPlayer.prototype.addFromList = function(collection){
 }
 
 ARAudioPlayer.prototype.showTrackList = function(){
-    console.log('TODO: show track list method');
+    var self = this;
+    self.application.core.trackList;
+    for(var i=0; i<self.application.core.trackList.length; i++){
+        console.log(self.application.core.trackList[i].title);
+    }
 };
 
 ARAudioPlayer.prototype.playNextTrack = function(){
@@ -346,7 +350,7 @@ ARAudioPlayer.prototype.application = {
                                      to="0.5">
                         </a-animation>
                         </a-entity>
-                        <a-entity geometry='primitive: plane; width: 2; height: 2;' position='1.5 0 0.1' material='side: double; color: black; opacity: 0' text='align: center; value: XR Audio Player\n\nv. 0.12.25; color: white; width: 5; font: https://cdn.aframe.io/fonts/mozillavr.fnt'>
+                        <a-entity geometry='primitive: plane; width: 2; height: 2;' position='1.5 0 0.1' material='side: double; color: black; opacity: 0' text='align: center; value: AR Audio Player\n\nv. 0.2.2; color: white; width: 5; font: https://cdn.aframe.io/fonts/mozillavr.fnt'>
                             <a-animation attribute="material.opacity"
                                      delay="3500"
                                      dur='2500'
@@ -399,4 +403,4 @@ ARAudioPlayer.prototype.application = {
 
 ARAudioPlayer.prototype.view = 'scroll'; // scroll is the default, list is the secondary option, tertiary mode is the alternative AR or VR view
 
-ARAudioPlayer.prototype.XRSetting = 'flat'; // flat is default, ar is secondary, vr is tertiary
+ARAudioPlayer.prototype.XRSetting = 'ar';

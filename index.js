@@ -12,40 +12,38 @@ var ARAudioPlayer = {
         }
         
         var top = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>ARAudioPlayer| spawn| v. 0.2.0</title>
-            <link rel=stylesheet type="text/css" href='../../css/XRMP.css' />
-            <script src='../js/jquery-3.2.1.min.js'></script>
-            <script src='../js/aframe.min.js'></script>
-            <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-            <script src='../js/coreUX.js'></script> <!-- handles movement, styling, and interactivity of core ui components in the dom -->
-            <script src='../js/ARAudioPlayer.js'></script> <!-- contains the class function for creating xr audio player objects -->
-            <script>
-
-                document.addEventListener('DOMContentLoaded', function(){
-                    var player = new ARAudioPlayer();   //create an xr audio player object
-                    player.build();`;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ARAudioPlayer| Auto-generated ARPlaylist| v. 0.2.2</title>
+    <link rel=stylesheet type="text/css" href='../../css/XRMP.css' />
+    <script src='../js/jquery-3.2.1.min.js'></script>
+    <script src='../js/aframe.min.js'></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src='../js/coreUX.js'></script> <!-- handles movement, styling, and interactivity of core ui components in the dom -->
+    <script src='../js/ARAudioPlayer.js'></script> <!-- contains the class function for creating ar audio player objects -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var player = new ARAudioPlayer();   //create an ar audio player object
+            player.build();`;
         
         var base = `coreEventListeners.launch([player]);    //  tell the core page launcher to start 
                                                             //  playing audio once the app is launched by the user (on screen tap)
-
-                });
-            </script>
-        </head>
-        <body>
-           <div id='launch-application-page' class='entry-layer overlay'>
-                <div id='instructions'>
-                    tap anywhere
-                    <div id='logo'></div>
-                    to launch
-                </div>
-            </div>
-            <div id='main-app-container' class='viewer-layer'>
-            </div>
-        </body>
-        </html>`;
+    });
+    </script>
+</head>
+<body>
+   <div id='launch-application-page' class='entry-layer overlay'>
+        <div id='instructions'>
+            tap anywhere
+            <div id='logo'></div>
+            to launch
+        </div>
+    </div>
+    <div id='main-app-container' class='viewer-layer'>
+    </div>
+</body>
+</html>`;
         
         //console.log(core);
         
@@ -67,7 +65,7 @@ var ARAudioPlayer = {
     },
     assetsContainer: null,
     build : function(){
-        console.log('spawning');
+        console.log('spawning playlist experience...');
         var self = this;
         self.application.core.tether = $('#main-app-container');
         self.assetsContainer = $('#embedded-assets-container');
@@ -117,7 +115,11 @@ var ARAudioPlayer = {
         }
     },
     showTrackList : function(){
-        console.log('TODO: show track list method');
+        var self = this;
+        self.application.core.trackList;
+        for(var i=0; i<self.application.core.trackList.length; i++){
+            console.log(self.application.core.trackList[i].title);
+        }
     },
     playNextTrack : function(){
         var self = this;
@@ -397,7 +399,7 @@ var ARAudioPlayer = {
                                          to="0.5">
                             </a-animation>
                             </a-entity>
-                            <a-entity geometry='primitive: plane; width: 2; height: 2;' position='1.5 0 0.1' material='side: double; color: black; opacity: 0' text='align: center; value: XR Audio Player\n\nv. 0.12.25; color: white; width: 5; font: https://cdn.aframe.io/fonts/mozillavr.fnt'>
+                            <a-entity geometry='primitive: plane; width: 2; height: 2;' position='1.5 0 0.1' material='side: double; color: black; opacity: 0' text='align: center; value: AR Audio Player\n\nv. 0.2.2; color: white; width: 5; font: https://cdn.aframe.io/fonts/mozillavr.fnt'>
                                 <a-animation attribute="material.opacity"
                                          delay="3500"
                                          dur='2500'
@@ -448,8 +450,7 @@ var ARAudioPlayer = {
         }
     },
     view : 'scroll', // scroll is the default, list is the secondary option, tertiary mode is the alternative AR or VR view
-    XRSetting : 'flat' // flat is default, ar is secondary, vr is tertiary
+    XRSetting : 'ar'
 };
 
-// expose log to other modules
 module.exports = ARAudioPlayer;

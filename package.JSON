@@ -1,6 +1,6 @@
 {
   "name": "araudioplayer",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "description": "audio player interface for web AR projects made by Patrice-Morgan Ongoly for the House of Venus",
   "main": "index.js",
   "scripts": {
