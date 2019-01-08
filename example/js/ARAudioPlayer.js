@@ -14,6 +14,7 @@ ARAudioPlayer.prototype.build = function(){
     var self = this;
     self.application.core.tether = $('#main-app-container');
     self.application.core.build();
+    self.assetsContainer = self.application.core.assetsContainer;
 };
 
 ARAudioPlayer.prototype.add = function(coverURL, audioURL, metadata){
@@ -244,8 +245,8 @@ ARAudioPlayer.prototype.application = {
         build: function(){
             var self = this;
             
-            self.tether.append(`<a-scene embedded arjs>
-                    <a-assets id="embedded-assets-container">
+            self.tether.append(`<a-scene embedded arjs='patternRatio: 0.5;'>
+                    <a-assets  timeout='20000' id="embedded-assets-container">
                         <img id='floor-texture' src='../media/texture/grid_pattern.png' preload='true' />
                         <img id='starter' src='../media/img/hov-md.png' preload='true' />
                         <a-asset-item id="crate-obj" src="../media/model/omega.obj"></a-asset-item>

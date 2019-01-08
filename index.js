@@ -1,6 +1,12 @@
 var ARAudioPlayer = {
     type :'araudio',
     socket: null,
+    buildCoreMarkup: function(trackNumber){
+        var track = trackNumber;
+        var result = `player.add('${track.cover}', '${track.audio}', {title: '${track.title}', author: '${track.author}', year: '${track.year}'});`;
+        return result;
+        
+    },
     spawn: function(){
         var self = this;
         //self.socket = io.connect(location.host);
@@ -19,6 +25,7 @@ var ARAudioPlayer = {
     <link rel=stylesheet type="text/css" href='../../css/XRMP.css' />
     <script src='../js/jquery-3.2.1.min.js'></script>
     <script src='../js/aframe.min.js'></script>
+    <script src='../js/aframe-ar.min.js'></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src='../js/coreUX.js'></script> <!-- handles movement, styling, and interactivity of core ui components in the dom -->
     <script src='../js/ARAudioPlayer.js'></script> <!-- contains the class function for creating ar audio player objects -->
@@ -68,8 +75,8 @@ var ARAudioPlayer = {
         console.log('spawning playlist experience...');
         var self = this;
         self.application.core.tether = $('#main-app-container');
-        self.assetsContainer = $('#embedded-assets-container');
         self.application.core.build();
+        self.assetsContainer = self.application.core.assetsContainer;
     },
     add : function(coverURL, audioURL, metadata){
         var self = this;
@@ -85,7 +92,7 @@ var ARAudioPlayer = {
             texture: `audio-cover-${index}`
         };
     
-        self.application.core.assetsContainer.append(`<img id='${track.texture}' src='${track.cover}' preload='true' />`);
+        //self.application.core.assetsContainer.append(`<img id='${track.texture}' src='${track.cover}' preload='true' />`);
     
         self.application.core.trackList.push(track);
 
@@ -293,8 +300,8 @@ var ARAudioPlayer = {
             build: function(){
                 var self = this;
 
-                self.tether.append(`<a-scene embedded arjs>
-                        <a-assets id="embedded-assets-container">
+                self.tether.append(`<a-scene embedded arjs='patternRatio: 0.5;'>
+                    <a-assets  timeout='20000' id="embedded-assets-container">
                             <img id='floor-texture' src='../media/texture/grid_pattern.png' preload='true' />
                             <img id='starter' src='../media/img/hov-md.png' preload='true' />
                             <a-asset-item id="crate-obj" src="../media/model/omega.obj"></a-asset-item>
@@ -445,7 +452,7 @@ var ARAudioPlayer = {
         Your browser does not support the audio element.
         </audio>
     </div>`);
-                self.assetsContainer = $('#embedded-assets-container');
+               self.assetsContainer = $('#embedded-assets-container');
             }
         }
     },
